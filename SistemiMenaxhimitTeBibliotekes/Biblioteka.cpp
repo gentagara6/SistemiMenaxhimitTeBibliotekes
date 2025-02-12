@@ -19,6 +19,25 @@ struct Libri
 Libri biblioteka[MAX_LIBRA];
 int numri_librave;
 
+void fshiLiber()
+{
+    int id;
+    cout << "Sh\x89noni ID-n\x89 e librit q\x89 d\x89shironi t\x89 fshini: ";
+    cin >> id;
+
+    for (int i = 0; i < numri_librave; i++)
+    {
+        if (biblioteka[i].ekziston && biblioteka[i].id == id) {
+            biblioteka[i].ekziston = false;
+            cout << "Libri \"" << biblioteka[i].titulli << "\" u fshi me sukses!\n";
+            return;
+        }
+    }
+
+    cout << "Libri nuk u gjet!\n";
+}
+
+
 int main() {
 
 
