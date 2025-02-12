@@ -7,7 +7,7 @@ using namespace std;
 
 struct Libri
 {
-	int id = 0;
+    int id = 0;
     string titulli = " ";
     string autori = " ";
     int viti_publikimit = 0;
