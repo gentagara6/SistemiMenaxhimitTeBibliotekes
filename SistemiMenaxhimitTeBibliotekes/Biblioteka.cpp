@@ -19,6 +19,53 @@ struct Libri
 Libri biblioteka[MAX_LIBRA];
 int numri_librave;
 
+void gjejLibrinMeTeVjeterDheMeTeRi()
+{
+    if (numri_librave == 0)
+    {
+        cout << "Nuk ka libra n\x89 bibliotek\x89!\n";
+        return;
+    }
+
+    Libri libriMeIVjeter;
+    Libri libriMeIRi;
+
+    bool kaLibraMeTeVjeter = false;
+    bool kaLibraMeTeRi = false;
+
+    for (int i = 0; i < numri_librave; i++)
+    {
+        if (biblioteka[i].ekziston)
+        {
+            if (!kaLibraMeTeVjeter || biblioteka[i].viti_publikimit < libriMeIVjeter.viti_publikimit)
+            {
+                libriMeIVjeter = biblioteka[i];
+                kaLibraMeTeVjeter = true;
+            }
+
+            if (!kaLibraMeTeRi || biblioteka[i].viti_publikimit > libriMeIRi.viti_publikimit)
+            {
+                libriMeIRi = biblioteka[i];
+                kaLibraMeTeRi = true;
+            }
+        }
+    }
+    if (kaLibraMeTeVjeter)
+    {
+        cout << "\nLibri m\x89 i vjet\x89r:\n"
+            << "Titulli: " << libriMeIVjeter.titulli << "\n"
+            << "Autori: " << libriMeIVjeter.autori << "\n"
+            << "Viti i publikimit: " << libriMeIVjeter.viti_publikimit << "\n\n";
+    }
+    if (kaLibraMeTeRi)
+    {
+        cout << "Libri m\x89 i ri:\n"
+            << "Titulli: " << libriMeIRi.titulli << "\n"
+            << "Autori: " << libriMeIRi.autori << "\n"
+            << "Viti i publikimit: " << libriMeIRi.viti_publikimit << "\n";
+    }
+}
+
 void fshiLiber()
 {
     int id;
