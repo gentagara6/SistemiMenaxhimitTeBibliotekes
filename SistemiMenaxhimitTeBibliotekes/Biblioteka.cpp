@@ -19,6 +19,29 @@ struct Libri
 Libri biblioteka[MAX_LIBRA];
 int numri_librave;
 
+void kerkoLiber()
+{
+    int id;
+    cout << "Sh\x89noni ID-n\x89 e librit q\x89 po k\x89rkoni: ";
+    cin >> id;
+
+    for (int i = 0; i < numri_librave; i++)
+    {
+        if (biblioteka[i].ekziston && biblioteka[i].id == id)
+        {
+            cout << "\nLibri u gjet!\n"
+                << "Titulli: " << biblioteka[i].titulli << endl
+                << "Autori: " << biblioteka[i].autori << endl
+                << "Viti i publikimit: " << biblioteka[i].viti_publikimit << endl
+                << "Vler\x89simi: " << biblioteka[i].vleresimi << endl
+                << "Kategoria: " << biblioteka[i].kategoria << endl;
+            return;
+        }
+    }
+
+    cout << "Libri nuk u gjet!\n";
+}
+
 void shfaqLibrat()
 {
     if (numri_librave == 0)
