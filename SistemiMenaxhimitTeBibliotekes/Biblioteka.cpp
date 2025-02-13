@@ -19,6 +19,29 @@ struct Libri
 Libri biblioteka[MAX_LIBRA];
 int numri_librave;
 
+void shfaqLibrat()
+{
+    if (numri_librave == 0)
+    {
+        cout << "Biblioteka \x89sht\x89 bosh!\n";
+        return;
+    }
+
+    cout << "\nLista e librave n\x89 bibliotek\x89:\n";
+    for (int i = 0; i < numri_librave; i++)
+    {
+        if (biblioteka[i].ekziston)
+        {
+            cout << "ID: " << biblioteka[i].id
+                << " | Titulli: " << biblioteka[i].titulli
+                << " | Autori: " << biblioteka[i].autori
+                << " | Viti: " << biblioteka[i].viti_publikimit
+                << " | Vler\x89simi: " << biblioteka[i].vleresimi
+                << " | Kategoria: " << biblioteka[i].kategoria << endl;
+        }
+    }
+}
+
 void inicializoBiblioteken()
 {
     Libri librat_fillestare[] =
