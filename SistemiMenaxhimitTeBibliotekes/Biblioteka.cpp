@@ -198,10 +198,54 @@ void fshiLiber()
 }
 
 
-int main() {
+int main() 
+{
+    inicializoBiblioteken();
+
+    int zgjedhja = 0;
+
+    do {
+        cout << "\n=====================================================\n";
+        cout << "|         SISTEMI I MENAXHIMIT TE BIBLIOTEKES       |\n";
+        cout << "=====================================================\n";
+        cout << "|  [1]  Shto nj\x89 lib\x89r t\x89 ri                        |\n";
+        cout << "|  [2]  Shfaq t\x89 gjith\x89 librat                      |\n";
+        cout << "|  [3]  K\x89rko nj\x89 lib\x89r                             |\n";
+        cout << "|  [4]  Fshi nj\x89 lib\x89r                              |\n";
+        cout << "|  [5]  Numri i librave n\x89 bibliotek\x89               |\n";
+        cout << "|  [6]  Gjej librin m\x89 t\x89 vjet\x89r dhe m\x89 t\x89 ri       |\n";
+        cout << "|  [7]  Dil nga programi                            |\n";
+        cout << "=====================================================\n";
+        cout << "| Zgjedhja juaj: ";
+        cin >> zgjedhja;
 
 
+        switch (zgjedhja) {
+        case 1:
+            shtoLiber();
+            break;
+        case 2:
+            shfaqLibrat();
+            break;
+        case 3:
+            kerkoLiber();
+            break;
+        case 4:
+            fshiLiber();
+            break;
+        case 5:
+            numriLibrave();
+            break;
+        case 6:
+            gjejLibrinMeTeVjeterDheMeTeRi();
+            break;
+        case 7:
+            cout << "Faleminderit p\x89r p\x89rdorimin e sistemit! Duke dalur...\n";
+            break;
+        default:
+            cout << "Zgjedhje e pavlefshme! Provo p\x89rs\x89ri.\n";
+        }
+    } while (zgjedhja != 7);
 
-
-	return 0;
+    return 0;
 }
