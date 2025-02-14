@@ -38,6 +38,41 @@ void inicializoBiblioteken()
     }
 }
 
+void shtoLiber()
+{
+    if (numri_librave >= MAX_LIBRA)
+    {
+        cout << "Biblioteka \x89sht\x89 e mbushur! Nuk mund t\x89 shtoni m\x89 shum\x89 libra.\n";
+        return;
+    }
+
+    Libri libri;
+    cout << "Sh\x89noni ID-n\x89 e librit: ";
+    cin >> libri.id;
+    cin.ignore();
+
+    cout << "Sh\x89noni titullin e librit: ";
+    cin>>libri.titulli;
+
+    cout << "Sh\x89noni autorin e librit: ";
+    cin>>libri.autori;
+
+    cout << "Sh\x89noni vitin e publikimit: ";
+    cin >> libri.viti_publikimit;
+
+    cout << "Sh\x89noni vleresimin (1-5): ";
+    cin >> libri.vleresimi;
+
+    cout << "Sh\x89noni kategorin\x89 e librit: ";
+    cin>>libri.kategoria;
+
+    libri.ekziston = true;
+    biblioteka[numri_librave] = libri;
+    numri_librave++;
+
+    cout << "Libri \"" << libri.titulli << "\" u shtua me sukses!\n";
+}
+
 void kerkoLiber()
 {
     int id;
@@ -82,6 +117,19 @@ void shfaqLibrat()
                 << " | Kategoria: " << biblioteka[i].kategoria << endl;
         }
     }
+}
+
+void numriLibrave()
+{
+    int numerimi = 0;
+    for (int i = 0; i < numri_librave; i++)
+    {
+        if (biblioteka[i].ekziston) {
+            numerimi++;
+        }
+    }
+
+    cout << "\nNumri total i librave n\x89 bibliotek\x89: " << numerimi << endl;
 }
 
 void gjejLibrinMeTeVjeterDheMeTeRi()
